@@ -16,6 +16,7 @@ Then, paste the B1 folder in your geant4 directory and do the following (only fo
 ```bash
 cd B1
 mkdir B1_build
+cd B1_build
 cmake ../B1
 make -j10
 ```
