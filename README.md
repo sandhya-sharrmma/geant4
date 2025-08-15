@@ -3,7 +3,36 @@ A repository to store installation processes and simulations of geant4.
 
 ## Installation Steps on MacOS (Sequoia 15.5)
 
+### Preparation 
+Install Homebrew if you haven't yet:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Update/upgrade brew:
+```bash
+brew update
+brew upgrade
+```
+
+Install necessary packages: 
+```bash
+brew install cmake gcc expat qt libxmu openmotif libxrandr libxinerama libxcursor libxi libx11 xquartz
+brew install openjdk
+sudo ln -sfn $(brew --prefix)/opt/openjdk /Library/Java/JavaVirtualMachines/openjdk
+```
+
+Prepare directories to install geant4:
+```bash
+cd $HOME
+mkdir geant4
+mkdir root
+```
+
 ### Root Installation
+
 
 ### geant4 Installation
 
