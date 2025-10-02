@@ -7,6 +7,9 @@ A repository to store installation processes and simulations of geant4.
 Install Homebrew if you haven't yet:
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+Then run:
+```
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
@@ -23,6 +26,7 @@ brew install cmake gcc expat qt libxmu openmotif libxrandr libxinerama libxcurso
 brew install openjdk
 sudo ln -sfn $(brew --prefix)/opt/openjdk /Library/Java/JavaVirtualMachines/openjdk
 ```
+
 
 Prepare directories to install geant4:
 ```bash
