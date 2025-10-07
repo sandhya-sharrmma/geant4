@@ -166,18 +166,51 @@ This should be printed:
 
 
 ## Running an example
-Assuming there is a geant4 directory in your home directory, copy an example (say B1) from the following examples directory:
-```bash
-$HOME/geant4/geant4-v11.2.1-install/share/Geant4/examples/basic
+First, setup geant4:
+
 ```
-Then, paste the B1 folder in your geant4 directory and do the following (only for the first time you are running the example, later on it can be executed directly): 
+source SetupGeant4.sh
+```
+
+Assuming there is a geant4 directory in your home directory, copy an example (say B1) from the following examples directory:
+
 ```bash
+cp $HOME/geant4/geant4-v11.3.2-install/share/Geant4/examples/basic/B1 .
+```
+
+Then, paste the B1 folder in your geant4 directory and do the following (only for the first time you are running the example, later it can be executed directly): 
+```
 cd B1
 mkdir B1_build
 cd B1_build
-cmake ../B1
+```
+
+If cmake has not been installed or system cannot find homebrew:
+```
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Then: 
+```
+cmake ..
+```
+
+***Debugging Corner***
+If there is an error such as this:
+<img width="764" height="355" alt="image" src="https://github.com/user-attachments/assets/bafac1ac-30a7-4e9f-bcc0-55079b981981" />
+
+Run the following:
+```
+source $HOME/geant4/geant4-v11.3.2-install/bin/geant4.sh
+cmake "$HOME/geant4/B1/build"   -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5)"
+```
+
+Then:
+```
 make -j10
 ```
+
 Then, execute the compiled project:
 ```bash
 ./exampleB1
