@@ -149,11 +149,13 @@ nano SetupGeant4.sh
 ```
 
 Write the following:
+```
 echo '** Setup ROOT6 **'
 source $HOME/root/root/bin/thisroot.sh
 echo '** Setup GEANT4 **'
 source $HOME/geant4/geant4-v11.3.2-install/bin/geant4.sh
 echo 'GOOD WORK :))'
+```
 
 Test the .sh file:
 ```
@@ -196,7 +198,8 @@ Then:
 cmake ..
 ```
 
-***Debugging Corner***
+***Debugging Corner*** 
+
 If there is an error such as this:
 <img width="764" height="355" alt="image" src="https://github.com/user-attachments/assets/bafac1ac-30a7-4e9f-bcc0-55079b981981" />
 
@@ -205,6 +208,8 @@ Run the following:
 source $HOME/geant4/geant4-v11.3.2-install/bin/geant4.sh
 cmake "$HOME/geant4/B1/build"   -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5)"
 ```
+
+***End of Debugging Corner*** 
 
 Then:
 ```
