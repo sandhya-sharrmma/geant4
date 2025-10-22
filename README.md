@@ -165,7 +165,21 @@ source SetupGeant4.sh
 This should be printed:
 <img width="147" height="51" alt="image" src="https://github.com/user-attachments/assets/d2246959-52ba-4dbf-a745-560fadfe8949" />
 
+To add GDMLParser, run the following:
+```
+cd $HOME/geant4/geant4-v11.3.2/build
 
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=$HOME/geant4/geant4-v11.3.2-install \
+  -DGEANT4_INSTALL_DATA=ON \
+  -DGEANT4_USE_QT=ON \
+  -DGEANT4_USE_RAYTRACER_X11=ON \
+  -DGEANT4_USE_GDML=ON \
+  -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5)"
+
+make -j"$(sysctl -n hw.ncpu)"
+make install
+```
 
 ## Running an example
 First, setup geant4:
