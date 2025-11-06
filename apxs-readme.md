@@ -7,6 +7,13 @@ git clone git@github.com:sandhya-sharrmma/geant4.git
 
 Else, 
 ```
-cd $HOME/Desktop/apxs
+cd $HOME/Desktop/apxs;
 git pull 
 ```
+
+To run the simulation after making all necessary changes, inside the build directory:
+```
+./apxs -g ./geometry/new_geom/output.gdml -m ./macros/test_new_geom.mac
+```
+
+
