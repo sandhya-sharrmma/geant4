@@ -2,7 +2,7 @@
 
 If the repo is missing in remote, do the following:
 ```
-git clone git@github.com:sandhya-sharrmma/geant4.git
+git clone git@github.com:nyuad-astroparticle/apxs.git
 ```
 
 Else, 
